@@ -8,6 +8,7 @@ import {
   Pressable,
   ScrollView,
   Dimensions,
+  ActivityIndicator,
 } from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
 import Freecurrencyapi from '@everapi/freecurrencyapi-js';
@@ -217,18 +218,24 @@ function App() {
             <View
               style={{
                 flex: 1,
+                height: Dimensions.get('window').height,
                 alignItems: 'center',
                 justifyContent: 'center',
                 paddingHorizontal: 30,
+                backgroundColor: '#53499970',
               }}>
               <Text
                 style={{
                   fontSize: 24,
                   textAlign: 'center',
+                  color: 'white',
+                  marginBottom: 15,
                 }}>
                 An internet connection is required to get current exchange
                 information
               </Text>
+
+              <ActivityIndicator size={'small'} color={'#fff'} />
             </View>
           )}
         </ScrollView>
